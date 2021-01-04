@@ -1,16 +1,15 @@
-COMP3231 Take-home Exam Question 2 - 3 README.txt
-Name: Lee Yong Jin, UID: 3035144635
+# tomasulo_sim
+This is an implementation of Tomasulo algorithm for processor pipelining
 
-Compile and Run: ###################################################################
+## Compile and Run:
 
 Makefile has not been modified, and thus running "g++ -o processor processor.cpp driver.cpp" is sufficient to compile the program.
 The execution follows the form "cat tracefile |./processor –f F –k K –l L -m M -r R"
 
-Notes on Q2: #######################################################################
+### 5 Stage Pipelined Processor
 
-Firstly, all of the functionalities were implemented. Most of the descriptions about the functionalities
-were described in the comments, but I would like to reiterate the structure of the program in the README
-for the sake of convenience.
+Most of the descriptions about the functionalities were described in the comments, but I would 
+like to reiterate the structure of the program in the README for the sake of convenience.
 
 From "run_processor", update, execute, schedule, dispatch, and fetch are executed in order.
 If the corresponding queue for execution is empty, we move on to the next stage.
@@ -58,10 +57,9 @@ the machine state is deterministic because the updates are done in the order of 
 The cycle trace output is in the format as below:
 <tag_number> <entering fetch> <entering dispatch> <entering schedule queue> <start execution> <update start cycle>
 
-Notes on Q3: #######################################################################
+### Branch prediction
 
-Full functionalities are implemented. Firstly, Branch prediction is checked inside fetch() as per the 
-exam paper specification.
+Firstly, Branch prediction result is checked inside fetch().
 
 The 128 entry table of 2-bit bimodal GSelect predictor using index created by appending 3 bit wide GHR
 with the 4 bit (1~16) of hashed address value. The smith counters are all set to 01 for every predictor table entry.
@@ -82,6 +80,3 @@ is still found in the comments).
 
 Similar to the update order of non-branch instructions, branch instructions with the lower instruction number
 (tag number) is updated first as per the specification in the exam paper.
-
-Final Remarks #####################################################################
-
