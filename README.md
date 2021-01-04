@@ -1,7 +1,7 @@
 # tomasulo_sim
 This is an implementation of Tomasulo algorithm for processor pipelining
 
-## Compile and Run:
+## Compile and Run
 
 Makefile has not been modified, and thus running "g++ -o processor processor.cpp driver.cpp" is sufficient to compile the program.
 The execution follows the form "cat tracefile |./processor –f F –k K –l L -m M -r R"
